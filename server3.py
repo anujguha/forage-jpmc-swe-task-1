@@ -153,7 +153,7 @@ def generate_csv():
         for t, stock, side, order, size in orders(market()):
             if t > MARKET_OPEN + SIM_LENGTH:
                 break
-            writer.writerow([t, stock, side, order, size])
+            writer.writerow([t.encode(), stock.encode(), side.encode(), order.encode(), size.encode()])
 
 
 def read_csv():
